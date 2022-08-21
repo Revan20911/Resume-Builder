@@ -14,3 +14,5 @@ const Content = styled.div
 `display: block;
  margin: 0 auto;
 `;
+
+export default itemContainer;

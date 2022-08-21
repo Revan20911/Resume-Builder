@@ -7,27 +7,37 @@ const PersonalInfo = ({ personalInfo, onChange}) => {
 
     return(
         <PersonalInfoWrapper>
+            <Title>Personal Information</Title>
             <Input
-            placeholder='Name'
-            id='PersonName'
-            type="Name"/>
-
-            
-
-            <Input
-            placeholder='Name'
-            id='PersonName'
-            type="Name"/>
-
-            
+            placeholder='First'
+            id='PersonFirstName'
+            type="First"/>
 
             <Input
-            placeholder='Name'
-            id='PersonName'
-            type="Name"/>
+            placeholder='Middle'
+            id='PersonMiddleName'
+            type="Middle"/>
 
-            
-           
+            <Input
+            placeholder='Last'
+            id='PersonLastName'
+            type="Last"/>
+
+            <Input
+            placeholder='Address'
+            id='PersonAddress'
+            type="Address"/>
+
+            <Input 
+            placeholder="Email"
+            id="PersonEmail"
+            type="Email"/>
+
+            <Input 
+            placeholder="Phone"
+            id="PersonPhone"
+            type="Phone"/>
+
         </PersonalInfoWrapper>
     );
     
@@ -36,9 +46,17 @@ const PersonalInfo = ({ personalInfo, onChange}) => {
 const PersonalInfoWrapper = styled.div
 `
 display: flex;
-height: 80%;
+flex-direction: column;
+height: fit-content;
 width: 80%;
 padding: 50px;
+
+`;
+
+const Title = styled.h2
+`
+text-align: center;
+
 `;
 
 export default PersonalInfo;

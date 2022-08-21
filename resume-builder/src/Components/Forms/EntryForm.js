@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import PersonalInfo from "./PersonalInfo";
+import EducationInfo from "./Education";
+
 
 
 const EntryForm = ({
@@ -14,9 +16,9 @@ const EntryForm = ({
 
         <FormContainer>
 
-            <PersonalInfo></PersonalInfo>
+            <PersonalInfo />
+            <EducationInfo />
             
-           
         </FormContainer>
     );
 };

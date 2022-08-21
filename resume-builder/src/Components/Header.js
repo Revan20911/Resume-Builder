@@ -4,9 +4,9 @@ import styled from "styled-components"
 
 const Header = () => {
     return(
-        <HeaderContainer></HeaderContainer>
-    )
-}
+        <HeaderContainer />
+    );
+};
 
 const HeaderContainer = styled.header
 `display: flex;
