@@ -1,14 +1,24 @@
 import React from "react";
-import styled, { ThemeConsumer } from "styled-components";
+import styled, { css } from "styled-components";
 
-const Input = ({type, id, placeholder, value, onChange}) => {
+const Input = ({type,
+     id,
+     placeholder,
+     value,
+     onChange,
+     descClass,
+     dateClass
+}) => {
     return(
         <InputContainer
         onChange = {onChange}
         type = {type}
         id = {id}
         placeholder = {placeholder}
-        value = {value}/>
+        value = {value}
+        descClass={descClass}
+        dateClass={dateClass}
+        />
     );
 };
 
@@ -21,9 +31,33 @@ width: auto;
 border-radius: 0.5rem;
 border: 1px solid transparent;
 
+&:hover{
+    cursor: pointer;
+    border: 1px solid #3E6189
+}
+
 &:focus{
     border-color: black;
 }
+
+${(props) => 
+
+    props.descClass &&
+    css
+    `
+    height: 100px;
+
+    
+    `}
+${(props) => 
+
+    props.dateClass &&
+    css
+    `
+    width: 50%;
+
+
+    `}
 
 `;
 

@@ -12,10 +12,12 @@ const Main = () => {
 
 const MainWrapper = styled.div
 `margin: 0 auto;
-display: flex;
+display: block;
 height: 100vmax;
 width: 60vmax;
 background-color: #ccc;
+
+
 `;
 
 export default Main;
