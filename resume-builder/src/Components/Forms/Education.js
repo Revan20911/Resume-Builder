@@ -13,21 +13,21 @@ const EducationInfo = (props, {onChange}) => {
             <Input
             placeholder='Highest Level of Education'
             id='PersonEducationLevel'
-            type="EducationLevel"
+            
             onChange={onChange}
             value={educationInfo.educationLevel}/>
 
             <Input
             placeholder='Institution'
             id='PersonEducationInstitution'
-            type="Institution"
+            
             onChange={onChange}
             value={educationInfo.educationInstitution}/>
 
             <Input
             placeholder='Field of Study'
             id='Major'
-            type="Major"
+            
             onChange={onChange}
             value={educationInfo.field}/>
 

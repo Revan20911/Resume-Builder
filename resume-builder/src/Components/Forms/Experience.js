@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Input from "../Utils/input";
+import Button from "../Utils/button";
+import AddExperience from "./AddExperience";
 
 
-const ExperienceInfo = ({ personalInfo, onChange}) => {
+const ExperienceInfo = ({ personalInfo, onChange, onClick}) => {
+
+    
 
     return(
         <ExperienceInfoWrapper>
@@ -12,40 +16,45 @@ const ExperienceInfo = ({ personalInfo, onChange}) => {
             <Input
             placeholder='Company Name'
             id='Company'
-            type="Company"/>
+            type="Company"
+            onChange={onChange}/>
 
             <Input
             placeholder='Job Title'
             id='Job-Title'
-            type="Job-Title"/>
+            type="Job-Title"
+            onChange={onChange}/>
 
             <Dates>
             <Input
             placeholder='Start Date'
             type="date"
-            dateClass/>
+            dateClass
+            onChange={onChange}/>
 
             <Input
             placeholder='End Date'
             type="date"
-            dateClass/>
+            dateClass
+            onChange={onChange}/>
             </Dates>
 
             <Input
             placeholder="Job Description"
-            descClass/>
+            descClass
+            onChange={onChange}/>
 
-            
+           
 
+            <Button  text="ADD" sClass/>
         </ExperienceInfoWrapper>
     );
     
 };
 
 const ExperienceInfoWrapper = styled.div
-`
-display: flex;
-flex-direction: column;
+` <AddExperience />
+align-items: center;
 height: fit-content;
 width: 80%;
 padding: 50px;

@@ -50,4 +50,3 @@ text-align: center;
 
 `;
 
-export default EducationInfo;

@@ -4,6 +4,7 @@ import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./Education";
 import ExperienceInfo from "./Experience";
 import Button from "../Utils/button";
+import ExperiencePreview from "./PreviewForms/ExperiencePreview";
 
 
 
@@ -39,7 +40,8 @@ class EntryForm extends Component {
                 startDate: '',
                 endDate: '',
                 description: '',
-              }
+              },
+              experienceList: [],
             }
         }
     
@@ -68,9 +70,6 @@ class EntryForm extends Component {
 
   handleExperienceChange = (e) => {
 
-    
-
-
   }
 
   submitForm = (e) => {
@@ -88,16 +87,11 @@ class EntryForm extends Component {
     });
 
     console.log(this.state.education.educationLevel);
-
-
-
-
-
   }
 
   render(){ 
     
-    const {education, personalInfo, experienceInfo} = this.state;
+    const {education, personalInfo, experienceInfo, experienceList} = this.state;
 
     return(
 
@@ -112,6 +106,11 @@ class EntryForm extends Component {
             <Button type="submit" text="Submit" sClass/>
             <Button/>
             <Button type="reset" text="Clear" pClass/>
+
+
+            <ExperiencePreview experienceList={experienceList}/>
+            {/* <EducationPreview experienceList={experienceList}/>
+            <PersonalInfoPreview experienceList={experienceList}/> */}
             
         </FormContainer>
     );
