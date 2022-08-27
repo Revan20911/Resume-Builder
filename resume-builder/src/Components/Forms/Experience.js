@@ -22,10 +22,12 @@ const ExperienceInfo = ({ personalInfo, onChange}) => {
             <Dates>
             <Input
             placeholder='Start Date'
+            type="date"
             dateClass/>
 
             <Input
             placeholder='End Date'
+            type="date"
             dateClass/>
             </Dates>
 

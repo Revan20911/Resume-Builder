@@ -27,7 +27,7 @@ const InputContainer = styled.input
 padding: 0.5rem;
 margin: 10px;
 height: 20px;
-width: auto;
+width: 96%;
 border-radius: 0.5rem;
 border: 1px solid transparent;
 

@@ -1,17 +1,30 @@
-import logo from './logo.svg';
+
+import React, {Component} from 'react';
 import './App.css';
-import Button from './Components/Utils/button';
+import Preview from './Components/Preview';
 import Main from './Components/Main';
 import Header from './Components/Header';
 
-function App() {
-  return (
-    <>
-      <Header />
-      <Main />
+class App extends Component {
+  constructor (){
+    super();
 
-    </>
-  );
+  }
+
+
+  render() {
+
+    return (
+      <>
+        <Header />
+        <Main />
+        <Preview />
+  
+      </>
+    );
+  
+  }
 }
+  
 
 export default App;

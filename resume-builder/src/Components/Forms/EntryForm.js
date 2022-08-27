@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
 import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./Education";
@@ -7,30 +7,119 @@ import Button from "../Utils/button";
 
 
 
-const EntryForm = ({
-    Name, 
-    onChangePersonInfo,
-    onChangePersonExperience,
-    onChangePersonEducation,
+class EntryForm extends Component {
 
-}) => {
+    constructor() {
+
+        super();
+
+        this.state = {
+
+            education: {
+                ecducationLevel: '',
+                educationInstitution: '',
+                field: '',
+              },
+        
+              personalInfo: {
+        
+                firstName: '',
+                middleName: '',
+                lastName: '',
+                address: '',
+                email: '',
+                phone: '',
+        
+              },
+        
+              experienceInfo: {
+        
+                companyName: '',
+                jobTitle: '',
+                startDate: '',
+                endDate: '',
+                description: '',
+              }
+            }
+        }
+    
+  handleEducationChange = (e) => {
+
+    
+
+
+  }
+
+  handlePersonalChange = (e) => {
+
+    this.setState = {
+
+        personalInfo:{
+
+            firstName: this.state.personalInfo.firstName,
+            middleName: this.state.personalInfo.middleName,
+            lastName: this.state.personalInfo.lastName,
+            address: this.state.personalInfo.address,
+            phone: this.state.personalInfo.phone,
+            email: this.state.personalInfo.email,
+        }
+    }
+  }
+
+  handleExperienceChange = (e) => {
+
+    
+
+
+  }
+
+  submitForm = (e) => {
+
+    e.preventDefault();
+
+    this.setState ({
+
+        education: {
+
+            educationLevel: e.target.value,
+        },
+
+
+    });
+
+    console.log(this.state.education.educationLevel);
+
+
+
+
+
+  }
+
+  render(){ 
+    
+    const {education, personalInfo, experienceInfo} = this.state;
+
     return(
 
-        <FormContainer>
+        <FormContainer onSubmit={this.submitForm} >
 
-            <PersonalInfo />
-            <EducationInfo />
+            <PersonalInfo 
+            onChange={this.handlePersonalChange}/>
+            <EducationInfo 
+            educationInfo={education}/>
             <ExperienceInfo />
 
-            <Button text="Submit" sClass/>
-            <Button></Button>
-            <Button text="Clear" pClass></Button>
+            <Button type="submit" text="Submit" sClass/>
+            <Button/>
+            <Button type="reset" text="Clear" pClass/>
             
         </FormContainer>
     );
 };
 
-const FormContainer = styled.div
+}
+
+const FormContainer = styled.form
 `
  display: flex;
  flex-direction: column;

@@ -11,32 +11,38 @@ const PersonalInfo = ({ personalInfo, onChange}) => {
             <Input
             placeholder='First'
             id='PersonFirstName'
-            type="First"/>
+            type="First"
+            onChange={onChange}/>
 
             <Input
             placeholder='Middle'
             id='PersonMiddleName'
-            type="Middle"/>
+            type="Middle"
+            onChange={onChange}/>
 
             <Input
             placeholder='Last'
             id='PersonLastName'
-            type="Last"/>
+            type="Last"
+            onChange={onChange}/>
 
             <Input
             placeholder='Address'
             id='PersonAddress'
-            type="Address"/>
+            type="Address"
+            onChange={onChange}/>
 
             <Input 
             placeholder="Email"
             id="PersonEmail"
-            type="Email"/>
+            type="Email"
+            onChange={onChange}/>
 
             <Input 
             placeholder="Phone"
             id="PersonPhone"
-            type="Phone"/>
+            type="Phone"
+            onChange={onChange}/>
 
         </PersonalInfoWrapper>
     );

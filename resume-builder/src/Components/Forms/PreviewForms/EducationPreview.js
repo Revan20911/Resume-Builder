@@ -3,9 +3,7 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const EducationInfo = (props, {onChange}) => {
-
-    const {educationInfo} = props; 
+const EducationPreview = () => {
 
     return(
         <EducationWrapper>
@@ -13,23 +11,17 @@ const EducationInfo = (props, {onChange}) => {
             <Input
             placeholder='Highest Level of Education'
             id='PersonEducationLevel'
-            type="EducationLevel"
-            onChange={onChange}
-            value={educationInfo.educationLevel}/>
+            type="EducationLevel"/>
 
             <Input
             placeholder='Institution'
             id='PersonEducationInstitution'
-            type="Institution"
-            onChange={onChange}
-            value={educationInfo.educationInstitution}/>
+            type="Institution"/>
 
             <Input
             placeholder='Field of Study'
             id='Major'
-            type="Major"
-            onChange={onChange}
-            value={educationInfo.field}/>
+            type="Major"/>
 
             <Button sClass text="ADD" type="submit"/>
 

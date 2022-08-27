@@ -1,13 +1,14 @@
 import React from "react";
 import styled, {css} from "styled-components";
 
-const Button = ({text, onClick, pClass, sClass}) => {
+const Button = ({text, onClick, pClass, sClass, type}) => {
     return(
 
         <ButtonContainer 
         onClick = {onClick}
         pClass = {pClass}
-        sClass = {sClass}>
+        sClass = {sClass}
+        type={type}>
             {text}
         </ButtonContainer>
 
