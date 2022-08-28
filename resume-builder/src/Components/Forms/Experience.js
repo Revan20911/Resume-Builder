@@ -2,13 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
-import AddExperience from "./AddExperience";
 
 
-const ExperienceInfo = ({ personalInfo, onChange, onClick}) => {
 
-    
-
+const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
     return(
         <ExperienceInfoWrapper>
             <Title>Professional Experience</Title>
@@ -16,35 +13,38 @@ const ExperienceInfo = ({ personalInfo, onChange, onClick}) => {
             <Input
             placeholder='Company Name'
             id='Company'
-            type="Company"
-            onChange={onChange}/>
+            type="text"
+            onChange={(e) => onChange(e, id)}
+            value={experienceInfo.companyName}/>
 
             <Input
             placeholder='Job Title'
             id='Job-Title'
-            type="Job-Title"
-            onChange={onChange}/>
+            type="text"
+            onChange={(e) => onChange(e, id)}
+            value={experienceInfo.jobTitle}/>
 
             <Dates>
             <Input
             placeholder='Start Date'
             type="date"
             dateClass
-            onChange={onChange}/>
+            onChange={(e) => onChange(e, id)}
+            value={experienceInfo.startDate}/>
 
             <Input
             placeholder='End Date'
             type="date"
             dateClass
-            onChange={onChange}/>
+            onChange={(e) => onChange(e, id)}
+            value={experienceInfo.endDate}/>
             </Dates>
 
             <Input
             placeholder="Job Description"
             descClass
-            onChange={onChange}/>
-
-           
+            onChange={(e) => onChange(e, id)}
+            value={experienceInfo.description}/>
 
             <Button  text="ADD" sClass/>
         </ExperienceInfoWrapper>
@@ -61,7 +61,6 @@ padding: 50px;
 
 `;
 
-
 const Dates = styled.div
 
 `
@@ -71,8 +70,6 @@ const Dates = styled.div
  width: 100%; 
 
 `;
-
-
 
 const Title = styled.h2
 `

@@ -1,53 +1,65 @@
+
 import React from "react";
 import styled from "styled-components";
 import Input from "../Utils/input";
 
 
-const PersonalInfo = ({ personalInfo, onChange}) => {
-
-    return(
-        <PersonalInfoWrapper>
-            <Title>Personal Information</Title>
-            <Input
-            placeholder='First'
-            id='PersonFirstName'
-            type="First"
-            onChange={onChange}/>
-
-            <Input
-            placeholder='Middle'
-            id='PersonMiddleName'
-            type="Middle"
-            onChange={onChange}/>
-
-            <Input
-            placeholder='Last'
-            id='PersonLastName'
-            type="Last"
-            onChange={onChange}/>
-
-            <Input
-            placeholder='Address'
-            id='PersonAddress'
-            type="Address"
-            onChange={onChange}/>
-
-            <Input 
-            placeholder="Email"
-            id="PersonEmail"
-            type="Email"
-            onChange={onChange}/>
-
-            <Input 
-            placeholder="Phone"
-            id="PersonPhone"
-            type="Phone"
-            onChange={onChange}/>
-
-        </PersonalInfoWrapper>
-    );
+const PersonalInfo = ({id, personalInfo, onChange }) => {
+        return(
+            <PersonalInfoWrapper>
+                <Title>Personal Information</Title>
+                <Input
+                placeholder='First'
+                id='PersonFirstName'
+                type="text"
+                onChange={(e) => onChange(e, id)}
+                value={personalInfo.firstName}
+                />
     
-};
+                <Input
+                placeholder='Middle'
+                id='PersonMiddleName'
+                type="text"
+                onChange={(e) => onChange(e, id)}
+                value={personalInfo.middleName}
+                />
+    
+                <Input
+                placeholder='Last'
+                id='PersonLastName'
+                type="text"
+                onChange={(e) => onChange(e, id)}
+                value={personalInfo.lastName}
+                />
+    
+                <Input
+                placeholder='Address'
+                id='PersonAddress'
+                type="text"
+                onChange={(e) => onChange(e, id)}
+                value={personalInfo.address}
+                />
+    
+                <Input 
+                placeholder="Email"
+                id="PersonEmail"
+                type="Email"
+                onChange={(e) => onChange(e, id)}
+                value={personalInfo.email}
+                />
+    
+                <Input 
+                placeholder="Phone"
+                id="PersonPhone"
+                type="Phone"
+                onChange={(e) => onChange(e, id)}
+                value={personalInfo.phone}
+                />
+    
+            </PersonalInfoWrapper>
+        );
+    }
+
 
 const PersonalInfoWrapper = styled.div
 `

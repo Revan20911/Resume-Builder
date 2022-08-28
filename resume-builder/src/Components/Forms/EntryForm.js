@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import styled from "styled-components";
 import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./Education";
@@ -8,100 +8,37 @@ import ExperiencePreview from "./PreviewForms/ExperiencePreview";
 
 
 
-class EntryForm extends Component {
+const EntryForm = ({
 
-    constructor() {
+  personalChange,
+  experienceChange,
+  educationChange,
+  personalInfo,
+  education,
+  experienceInfo,
+  submitForm,
+  experienceList
 
-        super();
-
-        this.state = {
-
-            education: {
-                ecducationLevel: '',
-                educationInstitution: '',
-                field: '',
-              },
-        
-              personalInfo: {
-        
-                firstName: '',
-                middleName: '',
-                lastName: '',
-                address: '',
-                email: '',
-                phone: '',
-        
-              },
-        
-              experienceInfo: {
-        
-                companyName: '',
-                jobTitle: '',
-                startDate: '',
-                endDate: '',
-                description: '',
-              },
-              experienceList: [],
-            }
-        }
-    
-  handleEducationChange = (e) => {
-
-    
-
-
-  }
-
-  handlePersonalChange = (e) => {
-
-    this.setState = {
-
-        personalInfo:{
-
-            firstName: this.state.personalInfo.firstName,
-            middleName: this.state.personalInfo.middleName,
-            lastName: this.state.personalInfo.lastName,
-            address: this.state.personalInfo.address,
-            phone: this.state.personalInfo.phone,
-            email: this.state.personalInfo.email,
-        }
-    }
-  }
-
-  handleExperienceChange = (e) => {
-
-  }
-
-  submitForm = (e) => {
-
-    e.preventDefault();
-
-    this.setState ({
-
-        education: {
-
-            educationLevel: e.target.value,
-        },
-
-
-    });
-
-    console.log(this.state.education.educationLevel);
-  }
-
-  render(){ 
-    
-    const {education, personalInfo, experienceInfo, experienceList} = this.state;
-
+  }) => {
     return(
 
-        <FormContainer onSubmit={this.submitForm} >
+        <FormContainer onSubmit={submitForm} >
 
             <PersonalInfo 
-            onChange={this.handlePersonalChange}/>
+            personalInfo={personalInfo}
+            onChange={personalChange}
+            />
+
             <EducationInfo 
-            educationInfo={education}/>
-            <ExperienceInfo />
+            educationInfo={education}
+            onChange={educationChange}
+            />
+
+            <ExperienceInfo
+            experienceInfo={experienceInfo}
+            onChange={experienceChange}
+            />
+           
 
             <Button type="submit" text="Submit" sClass/>
             <Button/>
@@ -116,7 +53,6 @@ class EntryForm extends Component {
     );
 };
 
-}
 
 const FormContainer = styled.form
 `

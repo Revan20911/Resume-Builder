@@ -3,32 +3,26 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const EducationInfo = (props, {onChange}) => {
-
-    const {educationInfo} = props; 
-
+const EducationInfo = ({id, educationInfo, onChange, onDelete}) => {
     return(
         <EducationWrapper>
             <Title>Education</Title>
             <Input
             placeholder='Highest Level of Education'
             id='PersonEducationLevel'
-            
-            onChange={onChange}
+            onChange={(e) => onChange(e, id)}
             value={educationInfo.educationLevel}/>
 
             <Input
             placeholder='Institution'
             id='PersonEducationInstitution'
-            
-            onChange={onChange}
+            onChange={(e) => onChange(e, id)}
             value={educationInfo.educationInstitution}/>
 
             <Input
             placeholder='Field of Study'
             id='Major'
-            
-            onChange={onChange}
+            onChange={(e) => onChange(e, id)}
             value={educationInfo.field}/>
 
             <Button sClass text="ADD" type="submit"/>
@@ -47,8 +41,6 @@ align-items: center;
 height: fit-content;
 width: 80%;
 padding: 50px;
-
-
 
 `;
 
