@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 
 
-const PersonalInfo = ({id, personalInfo, onChange }) => {
+const PersonalInfo = ({personalInfo, onChange }) => {
         return(
             <PersonalInfoWrapper>
                 <Title>Personal Information</Title>
@@ -12,7 +12,8 @@ const PersonalInfo = ({id, personalInfo, onChange }) => {
                 placeholder='First'
                 id='PersonFirstName'
                 type="text"
-                onChange={(e) => onChange(e, id)}
+                name="firstName"
+                onChange={(e) => onChange(e)}
                 value={personalInfo.firstName}
                 />
     
@@ -20,15 +21,17 @@ const PersonalInfo = ({id, personalInfo, onChange }) => {
                 placeholder='Middle'
                 id='PersonMiddleName'
                 type="text"
-                onChange={(e) => onChange(e, id)}
+                name="middleName"
+                onChange={(e) => onChange(e)}
                 value={personalInfo.middleName}
                 />
     
                 <Input
                 placeholder='Last'
                 id='PersonLastName'
+                name="lastName"
                 type="text"
-                onChange={(e) => onChange(e, id)}
+                onChange={(e) => onChange(e)}
                 value={personalInfo.lastName}
                 />
     
@@ -36,7 +39,8 @@ const PersonalInfo = ({id, personalInfo, onChange }) => {
                 placeholder='Address'
                 id='PersonAddress'
                 type="text"
-                onChange={(e) => onChange(e, id)}
+                name="address"
+                onChange={(e) => onChange(e)}
                 value={personalInfo.address}
                 />
     
@@ -44,7 +48,8 @@ const PersonalInfo = ({id, personalInfo, onChange }) => {
                 placeholder="Email"
                 id="PersonEmail"
                 type="Email"
-                onChange={(e) => onChange(e, id)}
+                name="email"
+                onChange={(e) => onChange(e)}
                 value={personalInfo.email}
                 />
     
@@ -52,14 +57,14 @@ const PersonalInfo = ({id, personalInfo, onChange }) => {
                 placeholder="Phone"
                 id="PersonPhone"
                 type="Phone"
-                onChange={(e) => onChange(e, id)}
+                name="phone"
+                onChange={(e) => onChange(e)}
                 value={personalInfo.phone}
                 />
     
             </PersonalInfoWrapper>
         );
     }
-
 
 const PersonalInfoWrapper = styled.div
 `

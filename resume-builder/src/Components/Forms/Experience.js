@@ -3,9 +3,7 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-
-
-const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
+const ExperienceInfo = ({id, experienceInfo, onChange, onDelete, name}) => {
     return(
         <ExperienceInfoWrapper>
             <Title>Professional Experience</Title>
@@ -14,6 +12,7 @@ const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
             placeholder='Company Name'
             id='Company'
             type="text"
+            name="companyName"
             onChange={(e) => onChange(e, id)}
             value={experienceInfo.companyName}/>
 
@@ -21,6 +20,7 @@ const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
             placeholder='Job Title'
             id='Job-Title'
             type="text"
+            name="jobTitle"
             onChange={(e) => onChange(e, id)}
             value={experienceInfo.jobTitle}/>
 
@@ -29,6 +29,7 @@ const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
             placeholder='Start Date'
             type="date"
             dateClass
+            name="startDate"
             onChange={(e) => onChange(e, id)}
             value={experienceInfo.startDate}/>
 
@@ -36,6 +37,7 @@ const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
             placeholder='End Date'
             type="date"
             dateClass
+            name="endDate"
             onChange={(e) => onChange(e, id)}
             value={experienceInfo.endDate}/>
             </Dates>
@@ -43,6 +45,7 @@ const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
             <Input
             placeholder="Job Description"
             descClass
+            name="description"
             onChange={(e) => onChange(e, id)}
             value={experienceInfo.description}/>
 

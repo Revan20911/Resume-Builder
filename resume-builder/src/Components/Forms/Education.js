@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const EducationInfo = ({id, educationInfo, onChange, onDelete}) => {
+const EducationInfo = ({id, educationInfo, onChange, onDelete, name}) => {
     return(
         <EducationWrapper>
             <Title>Education</Title>
@@ -11,17 +11,20 @@ const EducationInfo = ({id, educationInfo, onChange, onDelete}) => {
             placeholder='Highest Level of Education'
             id='PersonEducationLevel'
             onChange={(e) => onChange(e, id)}
+            name="educationLevel"
             value={educationInfo.educationLevel}/>
 
             <Input
             placeholder='Institution'
             id='PersonEducationInstitution'
             onChange={(e) => onChange(e, id)}
+            name="educationInstitution"
             value={educationInfo.educationInstitution}/>
 
             <Input
             placeholder='Field of Study'
             id='Major'
+            name="field"
             onChange={(e) => onChange(e, id)}
             value={educationInfo.field}/>
 

@@ -4,8 +4,6 @@ import PersonalInfo from "./PersonalInfo";
 import EducationInfo from "./Education";
 import ExperienceInfo from "./Experience";
 import Button from "../Utils/button";
-import ExperiencePreview from "./PreviewForms/ExperiencePreview";
-
 
 
 const EntryForm = ({
@@ -17,7 +15,6 @@ const EntryForm = ({
   education,
   experienceInfo,
   submitForm,
-  experienceList
 
   }) => {
     return(
@@ -38,17 +35,11 @@ const EntryForm = ({
             experienceInfo={experienceInfo}
             onChange={experienceChange}
             />
-           
-
+          
             <Button type="submit" text="Submit" sClass/>
             <Button/>
             <Button type="reset" text="Clear" pClass/>
-
-
-            <ExperiencePreview experienceList={experienceList}/>
-            {/* <EducationPreview experienceList={experienceList}/>
-            <PersonalInfoPreview experienceList={experienceList}/> */}
-            
+         
         </FormContainer>
     );
 };

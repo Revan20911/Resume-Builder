@@ -1,13 +1,15 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-const Input = ({type,
+const Input = ({
+     type,
      id,
      placeholder,
      value,
      onChange,
      descClass,
-     dateClass
+     dateClass,
+     name,
 }) => {
     return(
         <InputContainer
@@ -15,6 +17,7 @@ const Input = ({type,
         type = {type}
         id = {id}
         placeholder = {placeholder}
+        name={name}
         value = {value}
         descClass={descClass}
         dateClass={dateClass}
