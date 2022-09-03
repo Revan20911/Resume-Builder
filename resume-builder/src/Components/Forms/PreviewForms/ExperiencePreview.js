@@ -11,17 +11,34 @@ const ExperiencePreview = ({
 
 }) => {
         return(
-            <div>
+            
+            <ExperiencePreviewWrapper>
+                <h2>Experience</h2>
                 <h1>{companyName}</h1>
                 <h2>{jobTitle}</h2>
                 <Dates>
-                    <label>{startDate}</label>
-                    <label>{endDate}</label>
+                    <label>{startDate} - {endDate}</label>
                 </Dates>
-                <label>{description}</label>
-            </div>
+                <p>{description}</p>
+            </ExperiencePreviewWrapper>
         )
     };
+
+const ExperiencePreviewWrapper = styled.div
+
+`
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+
+h2{
+    margin: 0 auto;
+    text-align: center;
+}
+
+`;
 
 const Dates = styled.div
 

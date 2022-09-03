@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const ExperienceInfo = ({id, experienceInfo, onChange, onDelete, name}) => {
+const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
     return(
         <ExperienceInfoWrapper>
             <Title>Professional Experience</Title>

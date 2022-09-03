@@ -2,20 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import EntryForm from "./Forms/EntryForm";
 import stateList from "./Forms/states";
+import Preview from "./Preview";
 
 
 const Main = () => {
 
     const [itemState, setItemState ] = React.useState(stateList);
-    
+
     const handleEducationChange = (e) => {
 
-        
+        const {name, value} = e.target;
+
+        setItemState((prevState) => ({
+
+            ...prevState,
+
+            education: {
+                ...prevState.education,
+                [name]: value,
+            },
+        }));
     }
   
     const handlePersonalChange = (e) => {
 
-        const { name, value}  = e.target;
+        const { name, value }  = e.target;
 
         setItemState((prevState) => ({
 
@@ -29,20 +40,7 @@ const Main = () => {
   
     const handleExperienceChange = (e, id) => {
 
-        const {name, value} = e.target;
-
-        setItemState((prevState) => {
-
-            const addExperience = prevState.experienceInfo.map((experienceItem) => {
-
-                if(experienceItem.id === id){
-
-                    return {...experienceItem, [name]: value}
-                }
-                return experienceItem
-            })
-            return {...prevState, experienceInfo: [...addExperience]}
-        })
+      
     }
 
     return(
@@ -56,15 +54,19 @@ const Main = () => {
             educationChange={handleEducationChange}
             personalChange={handlePersonalChange}
         />
+        <Preview
+        experienceInfo={itemState.experienceInfo}  
+        personalInfo={itemState.personalInfo}
+        education={itemState.education}
+        />
     </MainWrapper>
     );  
 };
 
 const MainWrapper = styled.div
 `margin: 0 auto;
-display: block;
-height: 100vmax;
-width: 60vmax;
+display: flex;
+flex-direction: row;
 background-color: #ccc;
 
 `;

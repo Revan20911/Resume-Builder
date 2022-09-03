@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const Input = ({
+
      type,
      id,
      placeholder,
@@ -10,8 +11,10 @@ const Input = ({
      descClass,
      dateClass,
      name,
+
 }) => {
     return(
+
         <InputContainer
         onChange = {onChange}
         type = {type}
@@ -22,6 +25,7 @@ const Input = ({
         descClass={descClass}
         dateClass={dateClass}
         />
+
     );
 };
 
@@ -50,7 +54,6 @@ ${(props) =>
     `
     height: 100px;
 
-    
     `}
 ${(props) => 
 
@@ -58,7 +61,6 @@ ${(props) =>
     css
     `
     width: 50%;
-
 
     `}
 

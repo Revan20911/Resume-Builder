@@ -1,30 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Input from "../Utils/input";
-import Button from "../Utils/button";
 
-const EducationPreview = () => {
+
+const EducationPreview = ({educationInstitution, educationLevel, field}) => {
 
     return(
         <EducationWrapper>
             <Title>Education</Title>
-            <Input
-            placeholder='Highest Level of Education'
-            id='PersonEducationLevel'
-            type="EducationLevel"/>
-
-            <Input
-            placeholder='Institution'
-            id='PersonEducationInstitution'
-            type="Institution"/>
-
-            <Input
-            placeholder='Field of Study'
-            id='Major'
-            type="Major"/>
-
-            <Button sClass text="ADD" type="submit"/>
-
+            <p>{educationInstitution}</p>
+            <label> {educationLevel} of {field}</label>
         </EducationWrapper>
     );
     
@@ -50,3 +34,4 @@ text-align: center;
 
 `;
 
+export default EducationPreview;

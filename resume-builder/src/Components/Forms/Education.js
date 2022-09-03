@@ -3,16 +3,21 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const EducationInfo = ({id, educationInfo, onChange, onDelete, name}) => {
+const EducationInfo = ({id, educationInfo, onChange, onDelete}) => {
     return(
         <EducationWrapper>
             <Title>Education</Title>
-            <Input
+            <select
             placeholder='Highest Level of Education'
             id='PersonEducationLevel'
-            onChange={(e) => onChange(e, id)}
+            onChange={(e) => onChange(e)}
             name="educationLevel"
-            value={educationInfo.educationLevel}/>
+            value={educationInfo.educationLevel}>
+                <option selected value="none">none</option>
+                <option value="High School" > High School</option>
+                <option value="Bachelor's"> Bachelor's Degree</option>
+                <option value="High School"> High School</option>
+            </select>
 
             <Input
             placeholder='Institution'
@@ -44,6 +49,17 @@ align-items: center;
 height: fit-content;
 width: 80%;
 padding: 50px;
+
+select{
+padding: 10px 20px;
+margin: 10px;
+height: 20px;
+width: 96%;
+border-radius: 0.5rem;
+border: 1px solid transparent;
+
+
+}
 
 `;
 
