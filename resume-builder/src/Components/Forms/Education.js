@@ -3,17 +3,20 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const EducationInfo = ({id, educationInfo, onChange, onDelete}) => {
+
+const EducationInfo = ({id, educationInfo, onChange, educationItemAdd}) => {
     return(
         <EducationWrapper>
             <Title>Education</Title>
+            <label>Education Level</label>
             <select
+            
             placeholder='Highest Level of Education'
             id='PersonEducationLevel'
-            onChange={(e) => onChange(e)}
+            onChange={(e) => onChange(e, id)}
             name="educationLevel"
             value={educationInfo.educationLevel}>
-                <option selected value="none">none</option>
+                <option value="" disabled selected>Select your option</option>
                 <option value="High School" > High School</option>
                 <option value="Bachelor's"> Bachelor's Degree</option>
                 <option value="High School"> High School</option>
@@ -33,8 +36,7 @@ const EducationInfo = ({id, educationInfo, onChange, onDelete}) => {
             onChange={(e) => onChange(e, id)}
             value={educationInfo.field}/>
 
-            <Button sClass text="ADD" type="submit"/>
-
+            <Button type="submit" text="Add" sClass onClick={educationItemAdd}/>
         </EducationWrapper>
     );
     
@@ -48,15 +50,19 @@ justify-content: center;
 align-items: center;
 height: fit-content;
 width: 80%;
-padding: 50px;
+
+padding: 20px;
+
 
 select{
-padding: 10px 20px;
+padding: 0.5rem;
 margin: 10px;
 height: 20px;
 width: 96%;
 border-radius: 0.5rem;
 border: 1px solid transparent;
+background-color: #fff;
+color: #eee;
 
 
 }

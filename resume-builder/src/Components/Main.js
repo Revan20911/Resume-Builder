@@ -9,6 +9,22 @@ const Main = () => {
 
     const [itemState, setItemState ] = React.useState(stateList);
 
+    const experienceAddItem = (e) => {
+
+        
+        //TODO: Create a function that lets the user add additional experience items
+          
+
+    }
+
+    const educationAddItem = (e) => {
+
+        
+        //TODO: Create a function that lets the user add additional education items
+          
+
+    }
+     
     const handleEducationChange = (e) => {
 
         const {name, value} = e.target;
@@ -38,11 +54,20 @@ const Main = () => {
         }));
     }
   
-    const handleExperienceChange = (e, id) => {
+    const handleExperienceChange = (e) => {
 
-      
+        const { name, value} = e.target;
+
+        setItemState((prevState) => ({
+
+            ...prevState,
+            experienceInfo: {
+                ...prevState.experienceInfo,
+                [name] : value,
+            }
+        }))
     }
-
+    
     return(
     <MainWrapper>
         <EntryForm
@@ -53,6 +78,8 @@ const Main = () => {
             experienceChange={handleExperienceChange}
             educationChange={handleEducationChange}
             personalChange={handlePersonalChange}
+            experienceItemAdd={experienceAddItem}
+            
         />
         <Preview
         experienceInfo={itemState.experienceInfo}  

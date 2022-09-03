@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const EducationPreview = ({educationInstitution, educationLevel, field}) => {
 
     return(
@@ -23,8 +22,6 @@ align-items: center;
 height: fit-content;
 width: 80%;
 padding: 50px;
-
-
 
 `;
 

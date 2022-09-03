@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Input from "../Utils/input";
 import Button from "../Utils/button";
 
-const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
+
+const ExperienceInfo = ({id, experienceInfo, onChange, experienceItemAdd}) => {
     return(
         <ExperienceInfoWrapper>
             <Title>Professional Experience</Title>
@@ -49,18 +50,20 @@ const ExperienceInfo = ({id, experienceInfo, onChange, onDelete}) => {
             onChange={(e) => onChange(e, id)}
             value={experienceInfo.description}/>
 
-            <Button  text="ADD" sClass/>
+        <Button type="submit" text="Add" sClass onClick={experienceItemAdd}/>
+
         </ExperienceInfoWrapper>
     );
     
 };
 
 const ExperienceInfoWrapper = styled.div
-` <AddExperience />
+`
 align-items: center;
 height: fit-content;
 width: 80%;
-padding: 50px;
+
+
 
 `;
 

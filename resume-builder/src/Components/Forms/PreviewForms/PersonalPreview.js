@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 
 const PersonalPreview = ({
     firstName,
@@ -12,7 +11,7 @@ const PersonalPreview = ({
 
     return(
         <>
-        <h1>{firstName}{lastName}</h1>
+        <h1>{firstName} {middleName} {lastName}</h1>
         <label>{Address} - {phone} - {email}</label>
         </>
     )
